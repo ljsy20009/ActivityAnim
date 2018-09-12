@@ -1,0 +1,42 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <!--<item name="android:windowAnimationStyle">@style/activityAnimDefault</item>-->
+
+    </style>
+
+    <style name="overrideActivity" parent="AppTheme">
+        <item name="android:windowAnimationStyle">@style/overrideActivityAnim</item>
+    </style>
+
+    <style name="activityAnimDefault">
+        <item name="android:activityOpenEnterAnimation">@anim/translate_in_bottom_to_top</item>
+        <item name="android:activityOpenExitAnimation">@anim/translate_out_bottom_to_top</item>
+        <item name="android:activityCloseEnterAnimation">@anim/translate_in_top_to_bottom</item>
+        <item name="android:activityCloseExitAnimation">@anim/translate_out_top_to_bottom</item>
+    </style>
+
+    <style name="overrideActivityAnim" parent="@android:style/Animation.Translucent">
+        <item name="android:activityOpenEnterAnimation">@anim/translate_in_bottom_to_top</item>
+        <item name="android:activityOpenExitAnimation">@anim/alway_show</item>
+        <item name="android:activityCloseEnterAnimation">@anim/alway_show</item>
+        <item name="android:activityCloseExitAnimation">@anim/translate_out_top_to_bottom</item>
+    </style>
+
+    <style name="activityScene" parent="AppTheme">
+        <item name="android:windowContentTransitions">true</item>
+        <!--是否覆盖执行，其实可以理解成是否同步执行(true) / 顺序执行(false)-->
+        <item name="android:windowAllowEnterTransitionOverlap">false</item>
+        <item name="android:windowAllowReturnTransitionOverlap">false</item>
+    </style>
+
+    <style name="activitySceneStyle" parent="activityScene">
+        <item name="android:windowEnterTransition">@transition/activity_explode</item>
+        <item name="android:windowExitTransition">@transition/activity_explode</item>
+    </style>
+
+</resources>
